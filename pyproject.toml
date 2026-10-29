@@ -1,0 +1,24 @@
+[project]
+name = "final-assesment"
+version = "0.1.0"
+description = "Workflow Automation Backend"
+readme = "README.md"
+authors = [
+    { name = "alindapal07", email = "151637518+alindapal07@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "aiosqlite>=0.22.1",
+    "alembic>=1.20.1",
+    "asyncpg>=0.32.0",
+    "fastapi[standard]>=0.162.0",
+    "greenlet>=3.5.6",
+    "langchain>=1.4.7",
+    "langchain-google-genai>=4.4.2",
+    "pydantic>=2.14.1",
+    "sqlalchemy>=2.1.6",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.15,<0.13.0"]
+build-backend = "uv_build"

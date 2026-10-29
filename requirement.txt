@@ -1,0 +1,103 @@
+{
+
+  "name": "Order Processing",
+
+  "steps": [
+
+    {
+
+      "name": "Normalize Customer Name",
+
+      "type": "TRANSFORM_TEXT",
+
+      "config": {
+
+        "operation": "uppercase",
+
+        "input_key": "customer_name",
+
+        "output_key": "normalized_name"
+
+      }
+
+    },
+
+    {
+
+      "name": "Calculate Total Price",
+
+      "type": "CALCULATE",
+
+      "config": {
+
+        "operation": "multiply",
+
+        "left_key": "unit_price",
+
+        "right_key": "quantity",
+
+        "output_key": "total_price"
+
+      }
+
+    },
+
+    {
+
+      "name": "Apply Discount",
+
+      "type": "CALCULATE",
+
+      "config": {
+
+        "operation": "subtract",
+
+        "left_key": "total_price",
+
+        "right_key": "discount",
+
+        "output_key": "final_price"
+
+      }
+
+    },
+
+    {
+
+      "name": "Normalize Email",
+
+      "type": "TRANSFORM_TEXT",
+
+      "config": {
+
+        "operation": "lowercase",
+
+        "input_key": "email",
+
+        "output_key": "normalized_email"
+
+      }
+
+    }
+
+  ]
+
+}
+
+{
+
+  "input": {
+
+    "customer_name": "poku",
+
+    "unit_price": 200,
+
+    "quantity": 5,
+
+    "discount": 100,
+
+    "email": "POKU"
+
+  }
+
+}
